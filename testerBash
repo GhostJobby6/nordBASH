@@ -1,0 +1,31 @@
+#!/bin/bash
+#Starts an openVPN session with Nord VPN and allows the user to select the location of the server
+
+check=0
+answer=""
+dir=/usr/sbin/openvpn
+echo $dir
+echo -e "Press 1 for tcp or 2 for udp..."
+while [ $check -eq 0 ];do
+	#echo -e "Press 1 for tcp or 2 for udp..."
+	read answer
+	if [ $answer == "1" ]
+	then
+		echo -e "tcp it is..."
+		
+		check=1
+	elif [ $answer == "2" ]
+	then
+		echo -e "udp it is..."
+		check=1
+	else
+		#echo -e "choose 1 or 2 you cunt"
+		check=0
+	fi
+done
+
+echo "you have chosen"
+
+
+
+
