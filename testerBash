@@ -25,6 +25,11 @@ dirUDP=/etc/openvpn/ovpn_udp
 #--------------------------------------------
 
 clear
+#want to add a mad picture here at some point
+echo -e "${GREEN}${bold}This script will start a VPN session using openvpn and whatever .ovpn files you have stored in /etc/openvpn.${normal}${NC}"  
+sleep 3
+
+clear
 echo -e "Press ${bold}${RED}1${NC}${normal} for ${bold}${RED}TCP${normal}${NC} or ${bold}${BLUE}2${normal}${NC} for ${bold}${BLUE}UDP${normal}${NC}:"
 while [ $check -eq 0 ];do
 	read answer
@@ -114,6 +119,10 @@ while [ $check -eq 0 ];do
 	fi
 done
 echo "exited"
+
+
+
+
 
 
 
