@@ -25,8 +25,9 @@ dirUDP=/etc/openvpn/ovpn_udp
 #--------------------------------------------
 
 clear
-#want to add a mad picture here at some point
-echo -e "${GREEN}${bold}This script will start a VPN session using openvpn and whatever .ovpn files you have stored in /etc/openvpn.${normal}${NC}"  
+#------want to add a mad picture here at some point-----------
+echo -e "${GREEN}${bold}This script will start a VPN session using openvpn and whatever .ovpn files you have stored in /etc/openvpn.${normal}${NC}"
+#------want to prompt user to press any key to continue-------  
 sleep 3
 
 clear
