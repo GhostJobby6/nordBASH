@@ -23,31 +23,78 @@ dirTCP=/etc/openvpn/ovpn_tcp
 dirUDP=/etc/openvpn/ovpn_udp
 
 #--------------------------------------------
-
+resize -s 50 100
 clear
-#------want to add a mad picture here at some point-----------
-echo -e "${GREEN}${bold}This script will start a VPN session using openvpn and whatever .ovpn files you have stored in /etc/openvpn.${normal}${NC}"
+echo "dddmmmmddddhhhhhhhhhhhhhhhdmddmddhdmmdmmmdmmmmmddhhdddddddmdmdmmmmNNmNNmNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "dhhddmmmmmmmmmdhyyyhhhhyyhyyyhhhhhdddmmmdmmmmdmmmmmmddmmdmmmmNNNmmNmmNNmNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "ddddddhddmmmNNmmdddhddhhhhhhhhhyyhhhhdmddddmmmmmmmmmmmmmmmmmmNmmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "dddddddmdddmmmmmmmmmmddddddmddhhhhyyyhyhhddddhhyyyyhhddmmmmmNNmmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "dmddddddddddmddmmmmNNNmmdddmmmmmmmddhyo+/-.~            ~.:/oydNmmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "dmdmddddhdddhdddmmmmmNNNNmmmmmNNNho:.                          .:ohmmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmddmddmmmdddhdddmmmNmmNNNNmmmy/.                                  ./ymmNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmddmdddhdhddhddmmmNmNNd+.                                        .+dNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmmmmddddddddddddmmmh:/                                            \:hNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmmdddmmmmmmmmmdddy:                                                 \:dNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmddddmdmmmmmmmmm+/                        -.                          \omNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmmmmmmmmdmmmdmh-                         .dh\                           -dNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmmmmmmmmmmmmmy.                         /hmmy                            \hNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmdmmmmmmmmmmy/                         /ymmmms                            \hNNNNNNNNNNNNNNNNNN"
+echo "Nmmmmmmmmmmdddddmh/                         /sNNNNmm+                            \dNNNNNNNNNNNNNNNNN"
+echo "NmmNmmmmNmmmmmmmd-                     :\   MmNNNNNNN/                            -NNNNNNNNNNNNNNNNN"
+echo "NmmmmmNmmmmmmmmms                     /mh- /mmmmNNNNNm:                            sNNNNNNNNNNNNNNNN"
+echo "NNmNNNNmmmmmmmmm.                    :mmNmommmmmmNNNNNm.                           -NNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNmmNmh                    -mmmmmmmNNmmmmmNNNNd\     -.                   |dNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNs                   -dNNNNmmNNmNmNNNmNNNNh\   :mh.                   yNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNo                  .dNmNmNNNNNNNNNNNNmmmNNs\ /NNNh\                  sNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNs                 /hNNNmmmNNNNNNNNNNNNNNmmm+oNNNNNy\                 sNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNmmmNNh                /hmNNNNNNNNNNNNNNNNNNNNNNNmNNNNNNNy\                hNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNmNNmNm               /ymmmmNNNNNNNNNNNNNNNNNNNNNNmmmNNNNNs               /NNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNN+             /sNNNNmmNNNNNNNNNNNNNNNNNNNNNNNmNNNNNNo              +NNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNd             oNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN+            .mNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNs           +mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN+           yNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNN+         /mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN/         oNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNN+       /mNNNNNmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm:       oNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNs     :NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-    /sNNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNNd-  -mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-  -hNNNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNNNNo-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-oNNNNNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+echo "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+echo "mms+++ymmmmmms++smmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm+..+m+++smmmmmmmd+++hmo++++++osdmmmm++++dmmmmmm+++dm"
+echo "mm:    +mmmmm-  /mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm/  :mo   hmmmmmm:  .mm.         -hmm    ?ymmmmd   ym"
+echo "mm:     -dmmm-  /mmmmmmmdmmmmmmmmmmmmmmmmmmmmmmm/  :mm:  .mmmmms  .hmm.  /dddy-  |mm      +mmmd   ym"
+echo "mm:  :/  .ymm-  /mmmy/.   ~-odmm+--/:- smy:*  *:-  :mmd.  /mmmd.  ommm.  +mmmm/  |mm   o.  -dmd   ym"
+echo "mm:  :ms.  +m-  /mm:  ./o+-  .hm+   .:/h/  ./o+-   :mmmy   ymm-  :mmmm.  ....   .smm   ym/  .yd   ym"
+echo "mm:  :mmh.  -.  /ms   dmmmm:  -m+  .mmmy   dmmmm/  :mmmm+  \do  .dmmmm.  .---:/sdmmm   ymms\  /   ym"
+echo "mm:  :mmmm\     /mh   smmmd.  /m+  /mmmd   ommmd-  :mmmmm-  -   hmmmmm.  +mmmmmmmmmm   ymmmh.     ym"
+echo "mm:  :mmmmms\   /mms\  \-.   /mm+  /mmmms\  \-.    :mmmmmd\    ommmmmm.  +mmmmmmmmmm   ymmmmm/    ym"
+echo "mmo//smmmmmmd///smmmmy+:::/sdmmms//smmmmmms/::/sy//smmmmmmy///+mmmmmmm+//ymmmmmmmmmm///hmmmmmms///hm"
+echo "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+echo -e "${GREEN}${bold} This script will start a NordVPN session using openvpn assuming the tutorial on the NordVPN \n website was followed.${normal}${NC}"
+echo -e https://nordvpn.com/tutorials/linux/openvpn/
 #------want to prompt user to press any key to continue-------  
-sleep 3
+read -n 1 -s -r -p "Press any key to continue"
 
 clear
-echo -e "Press ${bold}${RED}1${NC}${normal} for ${bold}${RED}TCP${normal}${NC} or ${bold}${BLUE}2${normal}${NC} for ${bold}${BLUE}UDP${normal}${NC}:"
+echo -e "${GREEN}Press ${bold}${RED}1${NC}${normal}${GREEN} for ${bold}${RED}TCP${normal}${NC}${GREEN} or ${bold}${BLUE}2${normal}${NC}${GREEN} for ${bold}${BLUE}UDP${normal}${NC}${GREEN}:${NC}"
 while [ $check -eq 0 ];do
 	read answer
 	if [ $answer == "1" ] #TCP is chosen
 	then
 		clear		
-		echo -e "${bold}${RED}TCP${normal}${NC} it is..."
+		echo -e "${bold}${RED}TCP${normal}${GREEN} it is...${NC}"
 		TCParray=($dirTCP/*) #fill array with TCP files
 		noOfFiles=${#TCParray[@]}
-
+		sleep 2 
+		clear
 		while [ $check2 -eq 0 ];do
 
-			echo -e "Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: "
+			echo -e "${GREEN}Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: ${NC}"
 			read choice
 			if [ $choice == 1 ]; then
 				clear
-				echo -e "I like your style. Sorting you out presently, boss.."
+				echo -e "${GREEN}I like your style. Sorting you out presently, boss..${NC}"
 				sleep 2
 				number=$(shuf -i 0-$noOfFiles -n 1)
 				#echo "$number" #Troubleshooting
@@ -58,7 +105,7 @@ while [ $check -eq 0 ];do
 				
 			elif [ $choice == 2 ]; then
 				clear
-				echo -e "Picky Cunt"
+				echo -e "${GREEN}Picky Cunt${NC}"
 				#COUNTRY SELECTION CODE GOES HERE....
 				#for ((i=0; i<${#TCParray[@]}; i++));do #Loop through this array
 					#if [[ $TCParray[$i] = *"/us795"* ]]; then
@@ -69,7 +116,7 @@ while [ $check -eq 0 ];do
 				check2=1
 		
 			else
-				echo -e "It was a simple, 1 or 2. Fuck sake..."
+				echo -e "${GREEN}It was a simple, 1 or 2. Fuck sake...${NC}"
 				check2=0
 			fi
 		done
@@ -77,17 +124,18 @@ while [ $check -eq 0 ];do
 
 	elif [ $answer == "2" ]; then #UDP is chosen
 		clear
-		echo -e "${bold}${BLUE}UDP${normal}${NC} it is..."
+		echo -e "${bold}${BLUE}UDP${normal}${NC}${GREEN} it is...${NC}"
 		UDParray=($dirUDP/*) #fill array with UDP files
 		noOfFiles=${#UDParray[@]} #Get number of files
-
+		sleep 2 
+		clear
 		while [ $check3 -eq 0 ];do
 
-			echo -e "Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: "
+			echo -e "${GREEN}Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: ${NC}"
 			read choice
 			if [ $choice == 1 ]; then
 				clear
-				echo "I like your style. Sorting you out presently, boss.."
+				echo -e "${GREEN}I like your style. Sorting you out presently, boss..${NC}"
 				sleep 2
 				number=$(shuf -i 0-$noOfFiles -n 1) #Generates a random number between 0 and total no. of files
 				#echo "$number" #troubleshooting
@@ -96,9 +144,11 @@ while [ $check -eq 0 ];do
 				clear
 				openvpn ${UDParray[$number]} #Start openvpn session using random file
 
+			#-------work out how to filter out .ovpn files by country code (us, uk, etc.)
+
 			elif [ $choice == 2 ]; then
 				clear
-				echo -e "Picky Cunt"
+				echo -e "${GREEN}Picky Cunt${NC}"
 				#COUNTRY SELECTION CODE GOES HERE....
 				#for ((i=0; i<${#UDParray[@]}; i++));do #Loop through this array
 					#if [[ $UDParray[$i] = *"/us795"* ]]; then
@@ -109,17 +159,16 @@ while [ $check -eq 0 ];do
 				check3=1
 		
 			else
-				echo -e "It was a simple, 1 or 2. Fuck sake..."
+				echo -e "${GREEN}It was a simple, 1 or 2. Fuck sake...${NC}"
 				check3=0
 			fi
 		done
 		check=1
 	else
-		echo -e "Choose 1 or 2 you absolute weapon:"
+		echo -e "${GREEN}Choose 1 or 2 you absolute weapon:${NC}"
 		check=0
 	fi
 done
-echo "exited"
 
 
 
