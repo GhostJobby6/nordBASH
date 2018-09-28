@@ -1,6 +1,18 @@
 #!/bin/bash
 #Starts an openVPN session with Nord VPN and allows the user to select either a random or specific country for this session
 
+#---------TEXT COLOURS----------------
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+LIGHTBLUE='\033[1;34m'
+NC='\033[0m' # No Color
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+#------------------------------------
+
+
 us="us"
 check=0
 check2=0
@@ -10,12 +22,16 @@ choice=""
 dirTCP=/etc/openvpn/ovpn_tcp
 dirUDP=/etc/openvpn/ovpn_udp
 
-echo -e "Press 1 for TCP or 2 for UDP:"
+#--------------------------------------------
+
+clear
+echo -e "Press ${bold}${RED}1${NC}${normal} for ${bold}${RED}TCP${normal}${NC} or ${bold}${BLUE}2${normal}${NC} for ${bold}${BLUE}UDP${normal}${NC}:"
 while [ $check -eq 0 ];do
 	read answer
 	if [ $answer == "1" ] #TCP is chosen
 	then
-		echo -e "TCP it is..."
+		clear		
+		echo -e "${bold}${RED}TCP${normal}${NC} it is..."
 		TCParray=($dirTCP/*) #fill array with TCP files
 		noOfFiles=${#TCParray[@]}
 
@@ -24,15 +40,19 @@ while [ $check -eq 0 ];do
 			echo -e "Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: "
 			read choice
 			if [ $choice == 1 ]; then
-				echo "I like your style. Sorting you out presently, boss.."
+				clear
+				echo -e "I like your style. Sorting you out presently, boss.."
+				sleep 2
 				number=$(shuf -i 0-$noOfFiles -n 1)
 				#echo "$number" #Troubleshooting
 				#echo "${TCParray[$number]}" #Troubleshooting
 				check2=1
+				clear
 				openvpn ${TCParray[$number]} #Start openvpn session using random file
 				
 			elif [ $choice == 2 ]; then
-				echo "Picky Cunt"
+				clear
+				echo -e "Picky Cunt"
 				#COUNTRY SELECTION CODE GOES HERE....
 				#for ((i=0; i<${#TCParray[@]}; i++));do #Loop through this array
 					#if [[ $TCParray[$i] = *"/us795"* ]]; then
@@ -43,14 +63,15 @@ while [ $check -eq 0 ];do
 				check2=1
 		
 			else
-				echo "It was a simple, 1 or 2. Fuck sake..."
+				echo -e "It was a simple, 1 or 2. Fuck sake..."
 				check2=0
 			fi
 		done
 		check=1
 
 	elif [ $answer == "2" ]; then #UDP is chosen
-		echo -e "UDP it is..."
+		clear
+		echo -e "${bold}${BLUE}UDP${normal}${NC} it is..."
 		UDParray=($dirUDP/*) #fill array with UDP files
 		noOfFiles=${#UDParray[@]} #Get number of files
 
@@ -59,15 +80,19 @@ while [ $check -eq 0 ];do
 			echo -e "Press 1 for Quick Connect (Any Country) or 2 to choose a Specific Country: "
 			read choice
 			if [ $choice == 1 ]; then
+				clear
 				echo "I like your style. Sorting you out presently, boss.."
+				sleep 2
 				number=$(shuf -i 0-$noOfFiles -n 1) #Generates a random number between 0 and total no. of files
 				#echo "$number" #troubleshooting
 				#echo "${UDParray[$number]}" #Troubleshooting
 				check3=1
+				clear
 				openvpn ${UDParray[$number]} #Start openvpn session using random file
 
 			elif [ $choice == 2 ]; then
-				echo "Picky Cunt"
+				clear
+				echo -e "Picky Cunt"
 				#COUNTRY SELECTION CODE GOES HERE....
 				#for ((i=0; i<${#UDParray[@]}; i++));do #Loop through this array
 					#if [[ $UDParray[$i] = *"/us795"* ]]; then
@@ -78,7 +103,7 @@ while [ $check -eq 0 ];do
 				check3=1
 		
 			else
-				echo "It was a simple, 1 or 2. Fuck sake..."
+				echo -e "It was a simple, 1 or 2. Fuck sake..."
 				check3=0
 			fi
 		done
