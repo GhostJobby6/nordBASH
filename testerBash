@@ -26,6 +26,21 @@ dirTCP=/etc/openvpn/ovpn_tcp
 dirUDP=/etc/openvpn/ovpn_udp
 TCP_us_array=(ls /etc/openvpn/ovpn_tcp/us*); noOfFilesUS=${#TCP_us_array[@]}
 TCP_uk_array=(ls /etc/openvpn/ovpn_tcp/uk*); noOfFilesUK=${#TCP_uk_array[@]}
+TCP_al_array=(ls /etc/openvpn/ovpn_tcp/al*); noOfFilesAL=${#TCP_al_array[@]}
+TCP_at_array=(ls /etc/openvpn/ovpn_tcp/at*); noOfFilesAT=${#TCP_at_array[@]}
+TCP_au_array=(ls /etc/openvpn/ovpn_tcp/au*); noOfFilesAU=${#TCP_au_array[@]}
+TCP_az_array=(ls /etc/openvpn/ovpn_tcp/az*); noOfFilesAZ=${#TCP_az_array[@]}
+TCP_ba_array=(ls /etc/openvpn/ovpn_tcp/ba*); noOfFilesBA=${#TCP_ba_array[@]}
+TCP_be_array=(ls /etc/openvpn/ovpn_tcp/be*); noOfFilesBE=${#TCP_be_array[@]}
+TCP_bg_array=(ls /etc/openvpn/ovpn_tcp/bg*); noOfFilesBG=${#TCP_bg_array[@]}
+TCP_br_array=(ls /etc/openvpn/ovpn_tcp/br*); noOfFilesBR=${#TCP_br_array[@]}
+TCP_ca_array=(ls /etc/openvpn/ovpn_tcp/ca*); noOfFilesCA=${#TCP_ca_array[@]}
+TCP_ch_array=(ls /etc/openvpn/ovpn_tcp/ch*); noOfFilesCH=${#TCP_ch_array[@]}
+TCP_cl_array=(ls /etc/openvpn/ovpn_tcp/cl*); noOfFilesCL=${#TCP_cl_array[@]}
+TCP_cr_array=(ls /etc/openvpn/ovpn_tcp/cr*); noOfFilesCR=${#TCP_cr_array[@]}
+TCP_cy_array=(ls /etc/openvpn/ovpn_tcp/cy*); noOfFilesCY=${#TCP_cy_array[@]}
+TCP_cz_array=(ls /etc/openvpn/ovpn_tcp/cz*); noOfFilesCZ=${#TCP_cz_array[@]}
+TCP_de_array=(ls /etc/openvpn/ovpn_tcp/de*); noOfFilesDE=${#TCP_de_array[@]}
 
 #--------------------------------------------
 resize -s 50 100
@@ -117,9 +132,9 @@ while [ $check -eq 0 ];do
 				
 				while [ $check4 -eq 0 ];do
 				echo -e "${GREEN}Select a country: \n"
-				echo -e "${LIGHTBLUE}\t1.USA \t2.UK \n\t3.AU \t4.JP"
+				echo -e "${LIGHTBLUE}\t1.USA \t2.UK \n\t3.AL \t4.AT\n \t5.AU"
 				read country
-				#while [ $check4 -eq 0 ];do
+
 					if [ $country == 1 ]; then
 
 						number=$(shuf -i 0-$noOfFilesUS -n 1)
@@ -131,10 +146,10 @@ while [ $check -eq 0 ];do
 						#	echo "${TCP_us_array[$i]}" #print files to screen
 						#done
 					fi
-				check4=1
+				
 
 					if [ $country == 2 ]; then
-												
+																		
 						number=$(shuf -i 0-$noOfFilesUK -n 1)
 						check4=1
 						clear
@@ -144,7 +159,36 @@ while [ $check -eq 0 ];do
 						#	echo "${TCP_us_array[$i]}" #print files to screen
 						#done
 					fi
-				check4=1
+				
+
+					if [ $country == 3 ]; then
+
+						number=$(shuf -i 0-$noOfFilesAL -n 1)
+						check4=1	
+						clear
+						openvpn	${TCP_al_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 4 ]; then
+
+						number=$(shuf -i 0-$noOfFilesAT -n 1)
+						check4=1
+						clear	
+						openvpn	${TCP_at_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 5 ]; then
+
+						number=$(shuf -i 0-$noOfFilesAU -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_au_array[$number]}					
+
+					fi
 
 				done
 				check2=1
