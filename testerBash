@@ -7,6 +7,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 LIGHTBLUE='\033[1;34m'
 NC='\033[0m' # No Color
+GREY='\033[0;37m'
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -17,10 +18,14 @@ us="us"
 check=0
 check2=0
 check3=0
+check4=0
 answer=""
 choice=""
+country=""
 dirTCP=/etc/openvpn/ovpn_tcp
 dirUDP=/etc/openvpn/ovpn_udp
+TCP_us_array=(ls /etc/openvpn/ovpn_tcp/us*); noOfFilesUS=${#TCP_us_array[@]}
+TCP_uk_array=(ls /etc/openvpn/ovpn_tcp/uk*); noOfFilesUK=${#TCP_uk_array[@]}
 
 #--------------------------------------------
 resize -s 50 100
@@ -60,7 +65,7 @@ echo -e  "NNNNNNNNNNNNNNNNNNNNNNNo-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 echo -e  "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 echo -e  "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 echo -e  "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN${NC}"
-echo -e  "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+echo -e  "${GREY}mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
 echo -e  "mms+++ymmmmmms++smmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm+..+m+++smmmmmmmd+++hmo++++++osdmmmm++++dmmmmmm+++dm"
 echo -e  "mm:    +mmmmm-  /mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm/  :mo   hmmmmmm:  .mm.         -hmm    ?ymmmmd   ym"
 echo -e  "mm:     -dmmm-  /mmmmmmmdmmmmmmmmmmmmmmmmmmmmmmm/  :mm:  .mmmmms  .hmm.  /dddy-  |mm      +mmmd   ym"
@@ -70,7 +75,7 @@ echo -e  "mm:  :mmh.  -.  /ms   dmmmm:  -m+  .mmmy   dmmmm/  :mmmm+  \do  .dmmmm
 echo -e  "mm:  :mmmm\     /mh   smmmd.  /m+  /mmmd   ommmd-  :mmmmm-  -   hmmmmm.  +mmmmmmmmmm   ymmmh.     ym"
 echo -e  "mm:  :mmmmms\   /mms\  \-.   /mm+  /mmmms\  \-.    :mmmmmd\    ommmmmm.  +mmmmmmmmmm   ymmmmm/    ym"
 echo -e  "mmo//smmmmmmd///smmmmy+:::/sdmmms//smmmmmms/::/sy//smmmmmmy///+mmmmmmm+//ymmmmmmmmmm///hmmmmmms///hm"
-echo -e  "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+echo -e  "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm${NC}"
 echo -e "${GREEN}${bold} This script will start a NordVPN session using openvpn assuming the tutorial on the NordVPN \n website was followed.${normal}${NC}"
 echo -e https://nordvpn.com/tutorials/linux/openvpn/
 #------want to prompt user to press any key to continue-------  
@@ -86,7 +91,7 @@ while [ $check -eq 0 ];do
 		echo -e "${bold}${RED}TCP${normal}${GREEN} it is...${NC}"
 		TCParray=($dirTCP/*) #fill array with TCP files
 		noOfFiles=${#TCParray[@]}
-		sleep 2 
+		sleep 0.5 
 		clear
 		while [ $check2 -eq 0 ];do
 
@@ -95,7 +100,7 @@ while [ $check -eq 0 ];do
 			if [ $choice == 1 ]; then
 				clear
 				echo -e "${GREEN}I like your style. Sorting you out presently, boss..${NC}"
-				sleep 2
+				sleep 1
 				number=$(shuf -i 0-$noOfFiles -n 1)
 				#echo "$number" #Troubleshooting
 				#echo "${TCParray[$number]}" #Troubleshooting
@@ -104,15 +109,44 @@ while [ $check -eq 0 ];do
 				openvpn ${TCParray[$number]} #Start openvpn session using random file
 				
 			elif [ $choice == 2 ]; then
+
 				clear
 				echo -e "${GREEN}Picky Cunt${NC}"
-				#COUNTRY SELECTION CODE GOES HERE....
-				#for ((i=0; i<${#TCParray[@]}; i++));do #Loop through this array
-					#if [[ $TCParray[$i] = *"/us795"* ]]; then
-					#if [[ " ${TCParray[$i]} " =~ *" ${us} "* ]]; then			
-					#	echo "${TCParray[$i]}" #print files to screen
-					#fi
-				#done	
+				sleep 0.5
+				clear
+				
+				while [ $check4 -eq 0 ];do
+				echo -e "${GREEN}Select a country: \n"
+				echo -e "${LIGHTBLUE}\t1.USA \t2.UK \n\t3.AU \t4.JP"
+				read country
+				#while [ $check4 -eq 0 ];do
+					if [ $country == 1 ]; then
+
+						number=$(shuf -i 0-$noOfFilesUS -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_us_array[$number]}					
+						#sleep 1
+						#for ((i=0; i<${#TCP_us_array[@]}; i++));do #Loop through this array
+						#	echo "${TCP_us_array[$i]}" #print files to screen
+						#done
+					fi
+				check4=1
+
+					if [ $country == 2 ]; then
+												
+						number=$(shuf -i 0-$noOfFilesUK -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_uk_array[$number]}					
+						#sleep 1
+						#for ((i=0; i<${#TCP_us_array[@]}; i++));do #Loop through this array
+						#	echo "${TCP_us_array[$i]}" #print files to screen
+						#done
+					fi
+				check4=1
+
+				done
 				check2=1
 		
 			else
@@ -127,7 +161,7 @@ while [ $check -eq 0 ];do
 		echo -e "${bold}${BLUE}UDP${normal}${NC}${GREEN} it is...${NC}"
 		UDParray=($dirUDP/*) #fill array with UDP files
 		noOfFiles=${#UDParray[@]} #Get number of files
-		sleep 2 
+		sleep 0.5 
 		clear
 		while [ $check3 -eq 0 ];do
 
@@ -136,7 +170,7 @@ while [ $check -eq 0 ];do
 			if [ $choice == 1 ]; then
 				clear
 				echo -e "${GREEN}I like your style. Sorting you out presently, boss..${NC}"
-				sleep 2
+				sleep 1
 				number=$(shuf -i 0-$noOfFiles -n 1) #Generates a random number between 0 and total no. of files
 				#echo "$number" #troubleshooting
 				#echo "${UDParray[$number]}" #Troubleshooting
