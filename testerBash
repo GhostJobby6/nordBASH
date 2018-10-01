@@ -13,8 +13,6 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 #------------------------------------
 
-
-us="us"
 check=0
 check2=0
 check3=0
@@ -22,6 +20,7 @@ check4=0
 answer=""
 choice=""
 country=""
+input=""
 dirTCP=/etc/openvpn/ovpn_tcp
 dirUDP=/etc/openvpn/ovpn_udp
 TCP_us_array=(ls /etc/openvpn/ovpn_tcp/us*); noOfFilesUS=${#TCP_us_array[@]}
@@ -128,40 +127,35 @@ while [ $check -eq 0 ];do
 				clear
 				echo -e "${GREEN}Picky Cunt${NC}"
 				sleep 0.5
-				clear
-				
+				clear				
 				while [ $check4 -eq 0 ];do
+				clear
 				echo -e "${GREEN}Select a country: \n"
-				echo -e "${LIGHTBLUE}\t1.USA \t2.UK \n\t3.AL \t4.AT\n \t5.AU"
-				read country
+				echo -e "${LIGHTBLUE}\t1.United States (US) \t2.United Kingdom (UK) \n\t3.Albania (AL) \t\t4.Austria (AT) \n\t5.Australia (AU) \t6.Azerbaijan (AZ) \n\t7.Bosnia (BA) \t\t8.Belgium (BE) \n\t9.Bulgaria (BG) \t10.Brazil (BR) \n\t11.Canada (CA) \t\t12.Switzerland (CH) \n\t13.Chile (CL) \t\t14.Costa Rica (CR) \n\t15.Cyprus (CY) \t\t16.Czech Republic (CZ) \n\t17.Germany (DE) ${NC}"
+				read input
+				country=${input^^} #Make user input all uppercase
 
-					if [ $country == 1 ]; then
+					if [ $country == 1 ] || [ $country == "UNITED STATES" ] || [ $country == "US" ]; then
 
 						number=$(shuf -i 0-$noOfFilesUS -n 1)
 						check4=1
 						clear
 						openvpn	${TCP_us_array[$number]}					
-						#sleep 1
-						#for ((i=0; i<${#TCP_us_array[@]}; i++));do #Loop through this array
-						#	echo "${TCP_us_array[$i]}" #print files to screen
-						#done
+
 					fi
 				
 
-					if [ $country == 2 ]; then
+					if [ $country == 2 ] || [ $country == "UNITED KINGDOM" ] || [ $country == "UK" ]; then
 																		
 						number=$(shuf -i 0-$noOfFilesUK -n 1)
 						check4=1
 						clear
 						openvpn	${TCP_uk_array[$number]}					
-						#sleep 1
-						#for ((i=0; i<${#TCP_us_array[@]}; i++));do #Loop through this array
-						#	echo "${TCP_us_array[$i]}" #print files to screen
-						#done
+
 					fi
 				
 
-					if [ $country == 3 ]; then
+					if [ $country == 3 ] || [ $country == "ALBANIA" ] || [ $country == "AL" ]; then
 
 						number=$(shuf -i 0-$noOfFilesAL -n 1)
 						check4=1	
@@ -171,7 +165,7 @@ while [ $check -eq 0 ];do
 					fi
 				
 
-					if [ $country == 4 ]; then
+					if [ $country == 4 ] || [ $country == "AUSTRIA" ] || [ $country == "AT" ]; then
 
 						number=$(shuf -i 0-$noOfFilesAT -n 1)
 						check4=1
@@ -181,7 +175,7 @@ while [ $check -eq 0 ];do
 					fi
 				
 
-					if [ $country == 5 ]; then
+					if [ $country == 5 ] || [ $country == "AUSTRALIA" ] || [ $country == "AU" ]; then
 
 						number=$(shuf -i 0-$noOfFilesAU -n 1)
 						check4=1
@@ -189,12 +183,138 @@ while [ $check -eq 0 ];do
 						openvpn	${TCP_au_array[$number]}					
 
 					fi
+				
 
+					if [ $country == 6 ] || [ $country == "AZERBAIJAN" ] || [ $country == "AZ" ]; then
+
+						number=$(shuf -i 0-$noOfFilesAZ -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_az_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 7 ] || [ $country == "BOSNIA" ] || [ $country == "BA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBA -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_ba_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 8 ] || [ $country == "BELGIUM" ] || [ $country == "BE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBE -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_be_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 9 ] || [ $country == "BULGARIA" ] || [ $country == "BG" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBG -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_bg_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 10 ] || [ $country == "BRAZIL" ] || [ $country == "BR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBR -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_br_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 11 ] || [ $country == "CANADA" ] || [ $country == "CA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCA -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_ca_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 12 ] || [ $country == "SWITZERLAND" ] || [ $country == "CH" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCH -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_ch_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 13 ] || [ $country == "CHILE" ] || [ $country == "CL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCL -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_cl_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 14 ] || [ $country == "COSTA RICA" ] || [ $country == "CR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCR -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_cr_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 15 ] || [ $country == "CYPRUS" ] || [ $country == "CY" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCY -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_cy_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 16 ] || [ $country == "CZECH REPUBLIC" ] || [ $country == "CZ" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCZ -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_cz_array[$number]}					
+
+					fi
+				
+
+					if [ $country == 17 ] || [ $country == "GERMANY" ] || [ $country == "DE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesDE -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_de_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+
+					#fi
+
+
+					else
+						echo -e "${GREEN}Make a valid choice fuck sake...${NC}"
+						sleep 0.5
+					fi
 				done
 				check2=1
 		
 			else
-				echo -e "${GREEN}It was a simple, 1 or 2. Fuck sake...${NC}"
+				echo -e "${GREEN}Make a valid choice fuck sake...${NC}"
 				check2=0
 			fi
 		done
@@ -247,6 +367,10 @@ while [ $check -eq 0 ];do
 		check=0
 	fi
 done
+
+
+
+
 
 
 
