@@ -114,7 +114,7 @@ while [ $check -eq 0 ];do
 				while [ $check4 -eq 0 ];do
 				clear
 				echo -e "${GREEN}Select a country: \n"
-				echo -e "${LIGHTBLUE}\t1.United States (US) \t2.United Kingdom (UK) \n\t3.Albania (AL) \t\t4.Austria (AT) \n\t5.Australia (AU) \t6.Azerbaijan (AZ) \n\t7.Bosnia (BA) \t\t8.Belgium (BE) \n\t9.Bulgaria (BG) \t10.Brazil (BR) \n\t11.Canada (CA) \t\t12.Switzerland (CH) \n\t13.Chile (CL) \t\t14.Costa Rica (CR) \n\t15.Cyprus (CY) \t\t16.Czech Republic (CZ) \n\t17.Germany (DE) \t18.Denmark (DK) \n\t19.Estonia (EE) \t20.Spain (ES) \n\t21.Finland (FI) \t22.France (FR) \n\t23.Georgia (GE) \t24.Greece (GR)${NC}"
+				echo -e "${LIGHTBLUE}\t1.United States (US) \t2.United Kingdom (UK) \n\t3.Albania (AL) \t\t4.Austria (AT) \n\t5.Australia (AU) \t6.Azerbaijan (AZ) \n\t7.Bosnia (BA) \t\t8.Belgium (BE) \n\t9.Bulgaria (BG) \t10.Brazil (BR) \n\t11.Canada (CA) \t\t12.Switzerland (CH) \n\t13.Chile (CL) \t\t14.Costa Rica (CR) \n\t15.Cyprus (CY) \t\t16.Czech Republic (CZ) \n\t17.Germany (DE) \t18.Denmark (DK) \n\t19.Estonia (EE) \t20.Spain (ES) \n\t21.Finland (FI) \t22.France (FR) \n\t23.Georgia (GE) \t24.Greece (GR) \n\t25.Hong Kong (HK) \t26.Croatia (HR) \n\t27.Hungary (HU) \t28.Indonesia (ID) \n\t29.Ireland (IE) \t30.Italy (IT) \n\t31.Japan (JP) \t\t32.South Korea (KR) \n\t33.Luxemborg (LU) \t34.Latvia (LV)${NC}"
 				read input
 				country=${input^^} #Make user input all uppercase
 				country="$(echo -e "${country}" | tr -d '[:space:]')" #Remove Whitespaces

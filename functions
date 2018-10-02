@@ -31,15 +31,18 @@ TCP_cr_array=(ls /etc/openvpn/ovpn_tcp/cr*); noOfFilesCR=${#TCP_cr_array[@]}
 TCP_cy_array=(ls /etc/openvpn/ovpn_tcp/cy*); noOfFilesCY=${#TCP_cy_array[@]}
 TCP_cz_array=(ls /etc/openvpn/ovpn_tcp/cz*); noOfFilesCZ=${#TCP_cz_array[@]}
 TCP_de_array=(ls /etc/openvpn/ovpn_tcp/de*); noOfFilesDE=${#TCP_de_array[@]}
-
 TCP_dk_array=(ls /etc/openvpn/ovpn_tcp/dk*); noOfFilesDK=${#TCP_de_array[@]}
 TCP_ee_array=(ls /etc/openvpn/ovpn_tcp/ee*); noOfFilesEE=${#TCP_ee_array[@]}
 TCP_es_array=(ls /etc/openvpn/ovpn_tcp/es*); noOfFilesES=${#TCP_es_array[@]}
 TCP_fi_array=(ls /etc/openvpn/ovpn_tcp/fi*); noOfFilesFI=${#TCP_fi_array[@]}
 TCP_fr_array=(ls /etc/openvpn/ovpn_tcp/fr*); noOfFilesFR=${#TCP_fr_array[@]}
-
 TCP_ge_array=(ls /etc/openvpn/ovpn_tcp/ge*); noOfFilesGE=${#TCP_ge_array[@]}
 TCP_gr_array=(ls /etc/openvpn/ovpn_tcp/gr*); noOfFilesGR=${#TCP_gr_array[@]}
+TCP_hk_array=(ls /etc/openvpn/ovpn_tcp/hk*); noOfFilesHK=${#TCP_hk_array[@]}
+TCP_hr_array=(ls /etc/openvpn/ovpn_tcp/hr*); noOfFilesHR=${#TCP_hr_array[@]}
+
+TCP_hu_array=(ls /etc/openvpn/ovpn_tcp/hu*); noOfFilesHU=${#TCP_hu_array[@]}
+TCP_id_array=(ls /etc/openvpn/ovpn_tcp/id*); noOfFilesID=${#TCP_id_array[@]}
 
 TCPcountry_select() {
 
@@ -243,7 +246,43 @@ TCPcountry_select() {
 						clear
 						openvpn	${TCP_gr_array[$number]}
 						echo -e "${RED}JOBBY${NC}"
-					
+									
+
+					elif [ $1 == 25 ] || [ $1 == "HONGKONG" ] || [ $1 == "HK" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHK -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_hk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 26 ] || [ $1 == "CROATIA" ] || [ $1 == "HR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHR -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_hr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 27 ] || [ $1 == "HUNGARY" ] || [ $1 == "HU" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHU -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_hu_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 28 ] || [ $1 == "INDONESIA" ] || [ $1 == "ID" ]; then
+
+						number=$(shuf -i 0-$noOfFilesID -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_id_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+
 
 					else
 						echo -e "${GREEN}Make a valid choice fuck sake...${NC}"
