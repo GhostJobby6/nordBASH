@@ -14,6 +14,9 @@ normal=$(tput sgr0)
 
 input=""
 country=""
+
+TCPcountry_select() {
+
 TCP_us_array=(ls /etc/openvpn/ovpn_tcp/us*); noOfFilesUS=${#TCP_us_array[@]}
 TCP_uk_array=(ls /etc/openvpn/ovpn_tcp/uk*); noOfFilesUK=${#TCP_uk_array[@]}
 TCP_al_array=(ls /etc/openvpn/ovpn_tcp/al*); noOfFilesAL=${#TCP_al_array[@]}
@@ -60,17 +63,19 @@ TCP_no_array=(ls /etc/openvpn/ovpn_tcp/no*); noOfFilesNO=${#TCP_no_array[@]}
 TCP_nz_array=(ls /etc/openvpn/ovpn_tcp/nz*); noOfFilesNZ=${#TCP_nz_array[@]}
 TCP_pl_array=(ls /etc/openvpn/ovpn_tcp/pl*); noOfFilesPL=${#TCP_pl_array[@]}
 TCP_pt_array=(ls /etc/openvpn/ovpn_tcp/pt*); noOfFilesPT=${#TCP_pt_array[@]}
-
 TCP_ro_array=(ls /etc/openvpn/ovpn_tcp/ro*); noOfFilesRO=${#TCP_ro_array[@]}
 TCP_ru_array=(ls /etc/openvpn/ovpn_tcp/ru*); noOfFilesRU=${#TCP_ru_array[@]}
 TCP_se_array=(ls /etc/openvpn/ovpn_tcp/se*); noOfFilesSE=${#TCP_se_array[@]}
 TCP_sg_array=(ls /etc/openvpn/ovpn_tcp/sg*); noOfFilesSG=${#TCP_sg_array[@]}
 TCP_si_array=(ls /etc/openvpn/ovpn_tcp/si*); noOfFilesSI=${#TCP_si_array[@]}
 TCP_sk_array=(ls /etc/openvpn/ovpn_tcp/sk*); noOfFilesSK=${#TCP_sk_array[@]}
+TCP_th_array=(ls /etc/openvpn/ovpn_tcp/th*); noOfFilesTH=${#TCP_th_array[@]}
+TCP_tr_array=(ls /etc/openvpn/ovpn_tcp/tr*); noOfFilesTR=${#TCP_tr_array[@]}
+TCP_tw_array=(ls /etc/openvpn/ovpn_tcp/tw*); noOfFilesTW=${#TCP_tw_array[@]}
+TCP_ua_array=(ls /etc/openvpn/ovpn_tcp/ua*); noOfFilesUA=${#TCP_ua_array[@]}
+TCP_vn_array=(ls /etc/openvpn/ovpn_tcp/vn*); noOfFilesVN=${#TCP_vn_array[@]}
+TCP_za_array=(ls /etc/openvpn/ovpn_tcp/za*); noOfFilesZA=${#TCP_za_array[@]}
 
-
-
-TCPcountry_select() {
 
 					if [ $1 == 1 ] || [ $1 == "UNITEDSTATES" ] || [ $1 == "US" ]; then
 						
@@ -523,6 +528,638 @@ TCPcountry_select() {
 						check4=1
 						clear
 						openvpn	${TCP_sk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 53 ] || [ $1 == "THAILAND" ] || [ $1 == "TH" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTH -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_th_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 54 ] || [ $1 == "TURKEY" ] || [ $1 == "TR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTR -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_tr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 55 ] || [ $1 == "TAIWAN" ] || [ $1 == "TW" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTW -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_tw_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 56 ] || [ $1 == "UKRAINE" ] || [ $1 == "UA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesUA -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_ua_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 57 ] || [ $1 == "VIETNAM" ] || [ $1 == "VN" ]; then
+
+						number=$(shuf -i 0-$noOfFilesVN -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_vn_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 52 ] || [ $1 == "SOUTHAFRICA" ] || [ $1 == "ZA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesZA -n 1)
+						check4=1
+						clear
+						openvpn	${TCP_za_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+
+
+					else
+						echo -e "${GREEN}Make a valid choice fuck sake...${NC}"
+						sleep 0.5
+					fi
+
+
+}
+
+UDPcountry_select() {
+
+UDP_us_array=(ls /etc/openvpn/ovpn_udp/us*); noOfFilesUS=${#UDP_us_array[@]}
+UDP_uk_array=(ls /etc/openvpn/ovpn_udp/uk*); noOfFilesUK=${#UDP_uk_array[@]}
+UDP_al_array=(ls /etc/openvpn/ovpn_udp/al*); noOfFilesAL=${#UDP_al_array[@]}
+UDP_at_array=(ls /etc/openvpn/ovpn_udp/at*); noOfFilesAT=${#UDP_at_array[@]}
+UDP_au_array=(ls /etc/openvpn/ovpn_udp/au*); noOfFilesAU=${#UDP_au_array[@]}
+UDP_az_array=(ls /etc/openvpn/ovpn_udp/az*); noOfFilesAZ=${#UDP_az_array[@]}
+UDP_ba_array=(ls /etc/openvpn/ovpn_udp/ba*); noOfFilesBA=${#UDP_ba_array[@]}
+UDP_be_array=(ls /etc/openvpn/ovpn_udp/be*); noOfFilesBE=${#UDP_be_array[@]}
+UDP_bg_array=(ls /etc/openvpn/ovpn_udp/bg*); noOfFilesBG=${#UDP_bg_array[@]}
+UDP_br_array=(ls /etc/openvpn/ovpn_udp/br*); noOfFilesBR=${#UDP_br_array[@]}
+UDP_ca_array=(ls /etc/openvpn/ovpn_udp/ca*); noOfFilesCA=${#UDP_ca_array[@]}
+UDP_ch_array=(ls /etc/openvpn/ovpn_udp/ch*); noOfFilesCH=${#UDP_ch_array[@]}
+UDP_cl_array=(ls /etc/openvpn/ovpn_udp/cl*); noOfFilesCL=${#UDP_cl_array[@]}
+UDP_cr_array=(ls /etc/openvpn/ovpn_udp/cr*); noOfFilesCR=${#UDP_cr_array[@]}
+UDP_cy_array=(ls /etc/openvpn/ovpn_udp/cy*); noOfFilesCY=${#UDP_cy_array[@]}
+UDP_cz_array=(ls /etc/openvpn/ovpn_udp/cz*); noOfFilesCZ=${#UDP_cz_array[@]}
+UDP_de_array=(ls /etc/openvpn/ovpn_udp/de*); noOfFilesDE=${#UDP_de_array[@]}
+UDP_dk_array=(ls /etc/openvpn/ovpn_udp/dk*); noOfFilesDK=${#UDP_de_array[@]}
+UDP_ee_array=(ls /etc/openvpn/ovpn_udp/ee*); noOfFilesEE=${#UDP_ee_array[@]}
+UDP_es_array=(ls /etc/openvpn/ovpn_udp/es*); noOfFilesES=${#UDP_es_array[@]}
+UDP_fi_array=(ls /etc/openvpn/ovpn_udp/fi*); noOfFilesFI=${#UDP_fi_array[@]}
+UDP_fr_array=(ls /etc/openvpn/ovpn_udp/fr*); noOfFilesFR=${#UDP_fr_array[@]}
+UDP_ge_array=(ls /etc/openvpn/ovpn_udp/ge*); noOfFilesGE=${#UDP_ge_array[@]}
+UDP_gr_array=(ls /etc/openvpn/ovpn_udp/gr*); noOfFilesGR=${#UDP_gr_array[@]}
+UDP_hk_array=(ls /etc/openvpn/ovpn_udp/hk*); noOfFilesHK=${#UDP_hk_array[@]}
+UDP_hr_array=(ls /etc/openvpn/ovpn_udp/hr*); noOfFilesHR=${#UDP_hr_array[@]}
+UDP_hu_array=(ls /etc/openvpn/ovpn_udp/hu*); noOfFilesHU=${#UDP_hu_array[@]}
+UDP_id_array=(ls /etc/openvpn/ovpn_udp/id*); noOfFilesID=${#UDP_id_array[@]}
+UDP_ie_array=(ls /etc/openvpn/ovpn_udp/ie*); noOfFilesIE=${#UDP_ie_array[@]}
+UDP_il_array=(ls /etc/openvpn/ovpn_udp/il*); noOfFilesIL=${#UDP_il_array[@]}
+UDP_in_array=(ls /etc/openvpn/ovpn_udp/in*); noOfFilesIN=${#UDP_in_array[@]}
+UDP_is_array=(ls /etc/openvpn/ovpn_udp/is*); noOfFilesIS=${#UDP_is_array[@]}
+UDP_it_array=(ls /etc/openvpn/ovpn_udp/it*); noOfFilesIT=${#UDP_it_array[@]}
+UDP_jp_array=(ls /etc/openvpn/ovpn_udp/jp*); noOfFilesJP=${#UDP_jp_array[@]}
+UDP_kr_array=(ls /etc/openvpn/ovpn_udp/kr*); noOfFilesKR=${#UDP_kr_array[@]}
+UDP_lu_array=(ls /etc/openvpn/ovpn_udp/lu*); noOfFilesLU=${#UDP_lu_array[@]}
+UDP_lv_array=(ls /etc/openvpn/ovpn_udp/lv*); noOfFilesLV=${#UDP_lv_array[@]}
+UDP_md_array=(ls /etc/openvpn/ovpn_udp/md*); noOfFilesMD=${#UDP_md_array[@]}
+UDP_mk_array=(ls /etc/openvpn/ovpn_udp/mk*); noOfFilesMK=${#UDP_mk_array[@]}
+UDP_mx_array=(ls /etc/openvpn/ovpn_udp/mx*); noOfFilesMX=${#UDP_mx_array[@]}
+UDP_my_array=(ls /etc/openvpn/ovpn_udp/my*); noOfFilesMY=${#UDP_my_array[@]}
+UDP_nl_array=(ls /etc/openvpn/ovpn_udp/nl*); noOfFilesNL=${#UDP_nl_array[@]}
+UDP_no_array=(ls /etc/openvpn/ovpn_udp/no*); noOfFilesNO=${#UDP_no_array[@]}
+UDP_nz_array=(ls /etc/openvpn/ovpn_udp/nz*); noOfFilesNZ=${#UDP_nz_array[@]}
+UDP_pl_array=(ls /etc/openvpn/ovpn_udp/pl*); noOfFilesPL=${#UDP_pl_array[@]}
+UDP_pt_array=(ls /etc/openvpn/ovpn_udp/pt*); noOfFilesPT=${#UDP_pt_array[@]}
+UDP_ro_array=(ls /etc/openvpn/ovpn_udp/ro*); noOfFilesRO=${#UDP_ro_array[@]}
+UDP_ru_array=(ls /etc/openvpn/ovpn_udp/ru*); noOfFilesRU=${#UDP_ru_array[@]}
+UDP_se_array=(ls /etc/openvpn/ovpn_udp/se*); noOfFilesSE=${#UDP_se_array[@]}
+UDP_sg_array=(ls /etc/openvpn/ovpn_udp/sg*); noOfFilesSG=${#UDP_sg_array[@]}
+UDP_si_array=(ls /etc/openvpn/ovpn_udp/si*); noOfFilesSI=${#UDP_si_array[@]}
+UDP_sk_array=(ls /etc/openvpn/ovpn_udp/sk*); noOfFilesSK=${#UDP_sk_array[@]}
+UDP_th_array=(ls /etc/openvpn/ovpn_udp/th*); noOfFilesTH=${#UDP_th_array[@]}
+UDP_tr_array=(ls /etc/openvpn/ovpn_udp/tr*); noOfFilesTR=${#UDP_tr_array[@]}
+UDP_tw_array=(ls /etc/openvpn/ovpn_udp/tw*); noOfFilesTW=${#UDP_tw_array[@]}
+UDP_ua_array=(ls /etc/openvpn/ovpn_udp/ua*); noOfFilesUA=${#UDP_ua_array[@]}
+UDP_vn_array=(ls /etc/openvpn/ovpn_udp/vn*); noOfFilesVN=${#UDP_vn_array[@]}
+UDP_za_array=(ls /etc/openvpn/ovpn_udp/za*); noOfFilesZA=${#UDP_za_array[@]}
+
+
+					if [ $1 == 1 ] || [ $1 == "UNITEDSTATES" ] || [ $1 == "US" ]; then
+						
+						number=$(shuf -i 0-$noOfFilesUS -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_us_array[$number]}					
+				
+
+					elif [ $1 == 2 ] || [ $1 == "UNITEDKINGDOM" ] || [ $1 == "UK" ]; then
+																		
+						number=$(shuf -i 0-$noOfFilesUK -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_uk_array[$number]}					
+
+				
+
+					elif [ $1 == 3 ] || [ $1 == "ALBANIA" ] || [ $1 == "AL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesAL -n 1)
+						check4=1	
+						clear
+						openvpn	${UDP_al_array[$number]}					
+
+				
+
+					elif [ $1 == 4 ] || [ $1 == "AUSTRIA" ] || [ $1 == "AT" ]; then
+
+						number=$(shuf -i 0-$noOfFilesAT -n 1)
+						check4=1
+						clear	
+						openvpn	${UDP_at_array[$number]}					
+
+
+					elif [ $1 == 5 ] || [ $1 == "AUSTRALIA" ] || [ $1 == "AU" ]; then
+
+						number=$(shuf -i 0-$noOfFilesAU -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_au_array[$number]}					
+
+
+					elif [ $1 == 6 ] || [ $1 == "AZERBAIJAN" ] || [ $1 == "AZ" ]; then
+
+						number=$(shuf -i 0-$noOfFilesAZ -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_az_array[$number]}					
+
+
+					elif [ $1 == 7 ] || [ $1 == "BOSNIA" ] || [ $1 == "BA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBA -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ba_array[$number]}					
+
+
+					elif [ $1 == 8 ] || [ $1 == "BELGIUM" ] || [ $1 == "BE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_be_array[$number]}					
+				
+
+					elif [ $1 == 9 ] || [ $1 == "BULGARIA" ] || [ $1 == "BG" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBG -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_bg_array[$number]}					
+
+
+					elif [ $1 == 10 ] || [ $1 == "BRAZIL" ] || [ $1 == "BR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesBR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_br_array[$number]}					
+
+
+					elif [ $1 == 11 ] || [ $1 == "CANADA" ] || [ $1 == "CA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCA -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ca_array[$number]}					
+
+
+					elif [ $1 == 12 ] || [ $1 == "SWITZERLAND" ] || [ $1 == "CH" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCH -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ch_array[$number]}					
+				
+
+					elif [ $1 == 13 ] || [ $1 == "CHILE" ] || [ $1 == "CL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCL -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_cl_array[$number]}					
+
+
+					elif [ $1 == 14 ] || [ $1 == "COSTA RICA" ] || [ $1 == "CR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_cr_array[$number]}					
+
+
+					elif [ $1 == 15 ] || [ $1 == "CYPRUS" ] || [ $1 == "CY" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCY -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_cy_array[$number]}					
+				
+
+					elif [ $1 == 16 ] || [ $1 == "CZECHREPUBLIC" ] || [ $1 == "CZ" ]; then
+
+						number=$(shuf -i 0-$noOfFilesCZ -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_cz_array[$number]}					
+
+
+					elif [ $1 == 17 ] || [ $1 == "GERMANY" ] || [ $1 == "DE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesDE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_de_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+
+
+					elif [ $1 == 18 ] || [ $1 == "DENMARK" ] || [ $1 == "DK" ]; then
+
+						number=$(shuf -i 0-$noOfFilesDK -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_dk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+
+
+					elif [ $1 == 19 ] || [ $1 == "ESTONIA" ] || [ $1 == "EE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesEE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ee_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+				
+
+					elif [ $1 == 20 ] || [ $1 == "SPAIN" ] || [ $1 == "ES" ]; then
+
+						number=$(shuf -i 0-$noOfFilesES -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_es_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+
+
+					elif [ $1 == 21 ] || [ $1 == "FINLAND" ] || [ $1 == "FI" ]; then
+
+						number=$(shuf -i 0-$noOfFilesFI -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_fi_array[$number]}
+						echo -e "${RED}JOBBY${NC}"					
+				
+
+					elif [ $1 == 22 ] || [ $1 == "FRANCE" ] || [ $1 == "FR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesFR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_fr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+				
+
+					elif [ $1 == 23 ] || [ $1 == "GEORGIA" ] || [ $1 == "GE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesGE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ge_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+				
+
+					elif [ $1 == 24 ] || [ $1 == "GREECE" ] || [ $1 == "GR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesGR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_gr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 25 ] || [ $1 == "HONGKONG" ] || [ $1 == "HK" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHK -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_hk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 26 ] || [ $1 == "CROATIA" ] || [ $1 == "HR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_hr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 27 ] || [ $1 == "HUNGARY" ] || [ $1 == "HU" ]; then
+
+						number=$(shuf -i 0-$noOfFilesHU -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_hu_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 28 ] || [ $1 == "INDONESIA" ] || [ $1 == "ID" ]; then
+
+						number=$(shuf -i 0-$noOfFilesID -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_id_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 29 ] || [ $1 == "IRELAND" ] || [ $1 == "IE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesIE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ie_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 30 ] || [ $1 == "ISRAEL" ] || [ $1 == "IL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesIL -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_il_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 31 ] || [ $1 == "INDIA" ] || [ $1 == "IN" ]; then
+
+						number=$(shuf -i 0-$noOfFilesIN -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_in_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 32 ] || [ $1 == "ICELAND" ] || [ $1 == "IS" ]; then
+
+						number=$(shuf -i 0-$noOfFilesIS -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_is_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 33 ] || [ $1 == "ITALY" ] || [ $1 == "IT" ]; then
+
+						number=$(shuf -i 0-$noOfFilesIT -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_it_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 34 ] || [ $1 == "JAPAN" ] || [ $1 == "JP" ]; then
+
+						number=$(shuf -i 0-$noOfFilesJP -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_jp_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 35 ] || [ $1 == "SOUTHKOREA" ] || [ $1 == "KR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesKR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_kr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 36 ] || [ $1 == "LUXEMBOURG" ] || [ $1 == "LU" ]; then
+
+						number=$(shuf -i 0-$noOfFilesLU -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_lu_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 37 ] || [ $1 == "LATVIA" ] || [ $1 == "LV" ]; then
+
+						number=$(shuf -i 0-$noOfFilesLV -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_lv_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 38 ] || [ $1 == "MOLDOVA" ] || [ $1 == "MD" ]; then
+
+						number=$(shuf -i 0-$noOfFilesMD -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_md_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 39 ] || [ $1 == "MACEDONIA" ] || [ $1 == "MK" ]; then
+
+						number=$(shuf -i 0-$noOfFilesMK -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_mk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 40 ] || [ $1 == "MEXICO" ] || [ $1 == "MX" ]; then
+
+						number=$(shuf -i 0-$noOfFilesMX -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_mx_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 41 ] || [ $1 == "MALAYSIA" ] || [ $1 == "MY" ]; then
+
+						number=$(shuf -i 0-$noOfFilesMY -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_my_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 42 ] || [ $1 == "NETHERLANDS" ] || [ $1 == "NL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesNL -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_nl_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 43 ] || [ $1 == "NORWAY" ] || [ $1 == "NO" ]; then
+
+						number=$(shuf -i 0-$noOfFilesNO -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_no_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 44 ] || [ $1 == "NEWZEALAND" ] || [ $1 == "NZ" ]; then
+
+						number=$(shuf -i 0-$noOfFilesNZ -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_nz_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 45 ] || [ $1 == "POLAND" ] || [ $1 == "PL" ]; then
+
+						number=$(shuf -i 0-$noOfFilesPL -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_pl_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 46 ] || [ $1 == "PORTUGAL" ] || [ $1 == "PT" ]; then
+
+						number=$(shuf -i 0-$noOfFilesPT -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_pt_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 47 ] || [ $1 == "ROMANIA" ] || [ $1 == "RO" ]; then
+
+						number=$(shuf -i 0-$noOfFilesRO -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ro_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 48 ] || [ $1 == "RUSSIA" ] || [ $1 == "RU" ]; then
+
+						number=$(shuf -i 0-$noOfFilesRU -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ru_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 49 ] || [ $1 == "SWEDEN" ] || [ $1 == "SE" ]; then
+
+						number=$(shuf -i 0-$noOfFilesSE -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_se_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 50 ] || [ $1 == "SINGAPORE" ] || [ $1 == "SG" ]; then
+
+						number=$(shuf -i 0-$noOfFilesSG -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_sg_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 51 ] || [ $1 == "SLOVENIA" ] || [ $1 == "SI" ]; then
+
+						number=$(shuf -i 0-$noOfFilesSI -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_si_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 52 ] || [ $1 == "SLOVAKIA" ] || [ $1 == "SK" ]; then
+
+						number=$(shuf -i 0-$noOfFilesSK -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_sk_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 53 ] || [ $1 == "THAILAND" ] || [ $1 == "TH" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTH -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_th_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 54 ] || [ $1 == "TURKEY" ] || [ $1 == "TR" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTR -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_tr_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 55 ] || [ $1 == "TAIWAN" ] || [ $1 == "TW" ]; then
+
+						number=$(shuf -i 0-$noOfFilesTW -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_tw_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 56 ] || [ $1 == "UKRAINE" ] || [ $1 == "UA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesUA -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_ua_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 57 ] || [ $1 == "VIETNAM" ] || [ $1 == "VN" ]; then
+
+						number=$(shuf -i 0-$noOfFilesVN -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_vn_array[$number]}
+						echo -e "${RED}JOBBY${NC}"
+									
+
+					elif [ $1 == 52 ] || [ $1 == "SOUTHAFRICA" ] || [ $1 == "ZA" ]; then
+
+						number=$(shuf -i 0-$noOfFilesZA -n 1)
+						check4=1
+						clear
+						openvpn	${UDP_za_array[$number]}
 						echo -e "${RED}JOBBY${NC}"
 
 
